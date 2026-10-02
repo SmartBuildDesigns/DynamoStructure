@@ -1,10 +1,14 @@
 # Parametric Generation of Spatial Structures: `parametric_structer.dyn` Script
 
+![image](parametric_structure_2026-10-01_10-02-14.png)[Parametric Structure]
+
 Welcome to the official technical documentation of the Dynamo script **`parametric_structure.dyn`**. This repository serves as a portfolio to demonstrate advanced generative design and logical programming capabilities in Python, applied to structural engineering and the AEC (Architecture, Engineering & Construction) industry.
 
 Computational modeling is not merely a tool; it represents a methodological evolution. Geometric automation via custom scripts allows BIM/VDC specialists to iterate complex designs in milliseconds, eliminate human error in massive profile placement, and guarantee the integrity of the structural database.
 
 Below is a comprehensive breakdown of the computational logic behind this parametric spatial truss generator.
+
+![image](parametric_structure_2026-10-01_09-58-14.png)[Workspace Dynamo]
 
 ---
 
@@ -34,6 +38,8 @@ The primary variables in the Python environment are defined as follows:
 * **`H_columna`**: Clear height of supporting columns (`float(IN[7])`).
 * **`num_cols_u`**: Support count distributed along the X-axis (`int(IN[8])`).
 * **`num_cols_v`**: Support count distributed along the Y-axis (`int(IN[9])`).
+
+![image](Variables.png)[Init variables in sliders]
 
 ### Base Height Calculation
 To maintain spatial geometric proportions, the layer spacing (`H_base`) is automatically calculated using trigonometric ratios. The script computes `H_base = L * (math.sqrt(2.0) / 2.0) * factor_grosor`, ensuring that diagonal bracing angles dynamically scale relative to module length and thickness factors.
@@ -163,6 +169,7 @@ Rigidizaciones_2D = datos[4];
 Lineas_Columnas   = datos[5];
 Puntos_Zapatas    = datos[6];
 ```
+![image](separadorDatos.png)[Separete outputs]
 
 ### Materialization via the Revit API
 Automation builds real structural BIM models within seconds:
@@ -172,6 +179,8 @@ Automation builds real structural BIM models within seconds:
 * **Columns:** Vertical lines (`ejes_columnas`) connect to `StructuralFraming.ColumnByCurve` nodes, assigning family types such as 600 x 750mm rectangular columns.
 
 * **Foundations:** Ground points (`p_suelo`) feed into `FamilyInstance.ByPoint` nodes, placing isolated footing families (e.g., **Zapata-Rectangular: 2400 x 1800 x 450mm**) at exact spatial locations.
+
+![image](Magia_BIM.png)[Section of BIM instance]
 
 ## 6. Flowchart Suggestions
 For inclusion in project manuals, technical presentations, or architectural reports, the workflow can be represented with the following logic structure:
@@ -192,4 +201,8 @@ For inclusion in project manuals, technical presentations, or architectural repo
 
 * **BIM Instantiation:** Direct model writing via `StructuralFraming` and `FamilyInstance` nodes in Revit.
 
-[Click her for interact with the *.glb model](https://SmartBuildDesigns.github.io/DynamoStructure/)
+Here the video dynamo to Revit.
+
+<video width="320" height="240" controls>
+  <source src="Ejemplo.mp4" type="video/mp4">
+</video>
