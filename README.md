@@ -192,4 +192,4 @@ For inclusion in project manuals, technical presentations, or architectural repo
 
 * **BIM Instantiation:** Direct model writing via `StructuralFraming` and `FamilyInstance` nodes in Revit.
 
-[Haz clic aquí para interactuar con el modelo 3D en formato GLB](./parametric_structure.glb)
+[Click her for interact with the *.glb model](./parametric_structure.glb)
